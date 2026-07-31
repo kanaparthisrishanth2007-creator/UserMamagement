@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management System</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>User Management System</h1>
+
+      <div class="card">
+        <input type="hidden" id="userId" />
+
+        <div class="input-group">
+          <input type="text" id="userName" placeholder="Enter User Name" />
+
+          <input type="text" id="role" placeholder="Enter User Role" />
+        </div>
+
+        <div class="buttons">
+          <button class="save" onclick="saveUser()">Save User</button>
+
+          <button class="clear" onclick="clearForm()">Clear</button>
+        </div>
+
+        <p id="feedback"></p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <h2>Users List</h2>
+
+          <input
+            type="text"
+            id="search"
+            placeholder="Search by Name..."
+            onkeyup="searchUser()"
+          />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="userTableBody">
+            <tr>
+              <td colspan="4">Loading Users...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
